@@ -1,0 +1,53 @@
+name: publish
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: windows-latest
+    environment: production
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Build (Release)
+        run: dotnet build Carubbi.LayoutTemplateEngine.slnx -c Release
+
+      - name: Pack (Release)
+        shell: pwsh
+        run: |
+          dotnet pack src/Carubbi.LayoutTemplateEngine.Interfaces/Carubbi.LayoutTemplateEngine.Interfaces.csproj -c Release --no-build -o out
+          dotnet pack src/Carubbi.LayoutTemplateEngine/Carubbi.LayoutTemplateEngine.csproj -c Release --no-build -o out
+          dotnet pack src/Carubbi.LayoutTemplateEngine.NVelocity/Carubbi.LayoutTemplateEngine.NVelocity.csproj -c Release --no-build -o out
+          dotnet pack src/Carubbi.LayoutTemplateEngine.Razor3/Carubbi.LayoutTemplateEngine.Razor3.csproj -c Release --no-build -o out
+
+      - name: NuGet login (trusted publishing)
+        uses: nuget/login@v1
+        id: login
+        with:
+          user: rcarubbi
+
+      - name: Push packages
+        shell: pwsh
+        run: |
+          foreach ($package in Get-ChildItem out -Filter *.nupkg) {
+            Write-Host "Pushing $($package.FullName)"
+            dotnet nuget push $package.FullName `
+              --source https://api.nuget.org/v3/index.json `
+              --api-key "${{ steps.login.outputs.NUGET_API_KEY }}" `
+              --skip-duplicate
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          }

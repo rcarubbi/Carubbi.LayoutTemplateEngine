@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>Carubbi.LayoutTemplateEngine.NVelocity</RootNamespace>
+    <AssemblyName>Carubbi.LayoutTemplateEngine.NVelocity</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>Carubbi.LayoutTemplateEngine.NVelocity</PackageId>
+    <Version>2.0.0</Version>
+    <Authors>Raphael Carubbi Neto</Authors>
+    <Description>NVelocity layout template engine wrapper</Description>
+    <PackageTags>Layout Engine Wrapper Velocity Template</PackageTags>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/rcarubbi/Carubbi.LayoutTemplateEngine.git</RepositoryUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NVelocity" />
+    <PackageReference Include="SonarAnalyzer.CSharp" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Carubbi.LayoutTemplateEngine.Interfaces\Carubbi.LayoutTemplateEngine.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>

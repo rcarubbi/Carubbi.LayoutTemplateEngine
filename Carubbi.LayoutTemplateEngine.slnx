@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="src/Carubbi.LayoutTemplateEngine.Interfaces/Carubbi.LayoutTemplateEngine.Interfaces.csproj" />
+  <Project Path="src/Carubbi.LayoutTemplateEngine/Carubbi.LayoutTemplateEngine.csproj" />
+  <Project Path="src/Carubbi.LayoutTemplateEngine.NVelocity/Carubbi.LayoutTemplateEngine.NVelocity.csproj" />
+  <Project Path="src/Carubbi.LayoutTemplateEngine.Razor3/Carubbi.LayoutTemplateEngine.Razor3.csproj" />
+  <Project Path="tests/Carubbi.LayoutTemplateEngine.Tests/Carubbi.LayoutTemplateEngine.Tests.csproj" />
+</Solution>

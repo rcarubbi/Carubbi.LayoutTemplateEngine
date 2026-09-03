@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>Carubbi.LayoutTemplateEngine</RootNamespace>
+    <AssemblyName>Carubbi.LayoutTemplateEngine</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>Carubbi.LayoutTemplateEngine</PackageId>
+    <Version>2.0.0</Version>
+    <Authors>Raphael Carubbi Neto</Authors>
+    <Description>Razor (RazorEngineCore) layout template engine wrapper</Description>
+    <PackageTags>Layout Engine Wrapper Razor Template</PackageTags>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/rcarubbi/Carubbi.LayoutTemplateEngine.git</RepositoryUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="RazorEngineCore" />
+    <PackageReference Include="SonarAnalyzer.CSharp" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Carubbi.LayoutTemplateEngine.Interfaces\Carubbi.LayoutTemplateEngine.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>
