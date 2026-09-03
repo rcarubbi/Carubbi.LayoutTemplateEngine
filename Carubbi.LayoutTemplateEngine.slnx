@@ -2,5 +2,6 @@
   <Project Path="src/Carubbi.LayoutTemplateEngine.Interfaces/Carubbi.LayoutTemplateEngine.Interfaces.csproj" />
   <Project Path="src/Carubbi.LayoutTemplateEngine.Razor/Carubbi.LayoutTemplateEngine.Razor.csproj" />
   <Project Path="src/Carubbi.LayoutTemplateEngine.NVelocity/Carubbi.LayoutTemplateEngine.NVelocity.csproj" />
+  <Project Path="src/Carubbi.LayoutTemplateEngine.Scriban/Carubbi.LayoutTemplateEngine.Scriban.csproj" />
   <Project Path="tests/Carubbi.LayoutTemplateEngine.Tests/Carubbi.LayoutTemplateEngine.Tests.csproj" />
 </Solution>

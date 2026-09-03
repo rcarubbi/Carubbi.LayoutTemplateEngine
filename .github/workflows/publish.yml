@@ -32,6 +32,7 @@ jobs:
           dotnet pack src/Carubbi.LayoutTemplateEngine.Interfaces/Carubbi.LayoutTemplateEngine.Interfaces.csproj -c Release --no-build -o out
           dotnet pack src/Carubbi.LayoutTemplateEngine.Razor/Carubbi.LayoutTemplateEngine.Razor.csproj -c Release --no-build -o out
           dotnet pack src/Carubbi.LayoutTemplateEngine.NVelocity/Carubbi.LayoutTemplateEngine.NVelocity.csproj -c Release --no-build -o out
+          dotnet pack src/Carubbi.LayoutTemplateEngine.Scriban/Carubbi.LayoutTemplateEngine.Scriban.csproj -c Release --no-build -o out
 
       - name: NuGet login (trusted publishing)
         uses: nuget/login@v1
