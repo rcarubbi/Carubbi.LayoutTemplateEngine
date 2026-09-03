@@ -5,7 +5,7 @@ using NVelocity.App;
 
 namespace Carubbi.LayoutTemplateEngine.NVelocity;
 
-public class NVelocityEngine : ILayoutTemplateEngine
+public class NVelocityEngine : LayoutTemplateEngineBase
 {
     private readonly VelocityEngine _velocityEngine;
 
@@ -19,7 +19,7 @@ public class NVelocityEngine : ILayoutTemplateEngine
         _velocityEngine.Init(properties);
     }
 
-    public string RenderTemplate(string templateName, IDictionary<string, object> data)
+    public override string RenderTemplate(string templateName, IDictionary<string, object> data)
     {
         var template = _velocityEngine.GetTemplate(templateName);
         using var writer = new StringWriter();
@@ -28,17 +28,17 @@ public class NVelocityEngine : ILayoutTemplateEngine
         return writer.ToString();
     }
 
-    public string RenderTemplate(string masterPage, string templateName, IDictionary<string, object> data)
+    public override string RenderTemplate(string masterPage, string templateName, IDictionary<string, object> data)
     {
         var body = RenderTemplate(templateName, data);
         var merged = new Dictionary<string, object>(data)
         {
-            [TemplateBodyKey] = body
+            ["TemplateBody"] = body
         };
         return RenderTemplate(masterPage, merged);
     }
 
-    public string RenderFromContentTemplate(string content, IDictionary<string, object> data)
+    public override string RenderFromContentTemplate(string content, IDictionary<string, object> data)
     {
         using var writer = new StringWriter();
         var context = BuildContext(data);
@@ -55,6 +55,4 @@ public class NVelocityEngine : ILayoutTemplateEngine
         }
         return context;
     }
-
-    private const string TemplateBodyKey = "TemplateBody";
 }
