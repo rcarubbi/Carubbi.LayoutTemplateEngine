@@ -13,9 +13,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Carubbi.LayoutTemplateEngine.Interfaces\Carubbi.LayoutTemplateEngine.Interfaces.csproj" />
-    <ProjectReference Include="..\..\src\Carubbi.LayoutTemplateEngine\Carubbi.LayoutTemplateEngine.csproj" />
+    <ProjectReference Include="..\..\src\Carubbi.LayoutTemplateEngine.Razor\Carubbi.LayoutTemplateEngine.Razor.csproj" />
     <ProjectReference Include="..\..\src\Carubbi.LayoutTemplateEngine.NVelocity\Carubbi.LayoutTemplateEngine.NVelocity.csproj" />
-    <ProjectReference Include="..\..\src\Carubbi.LayoutTemplateEngine.Razor3\Carubbi.LayoutTemplateEngine.Razor3.csproj" />
   </ItemGroup>
 
 </Project>

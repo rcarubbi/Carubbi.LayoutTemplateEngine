@@ -1,7 +1,7 @@
 using Carubbi.LayoutTemplateEngine.Interfaces;
 using RazorEngineCore;
 
-namespace Carubbi.LayoutTemplateEngine;
+namespace Carubbi.LayoutTemplateEngine.Razor;
 
 public class RazorEngine : ILayoutTemplateEngine
 {

@@ -9,9 +9,8 @@ Layout engine wrappers for Razor and NVelocity, plus a shared abstraction.
 | Project | Package | Engine |
 |---------|---------|--------|
 | `Carubbi.LayoutTemplateEngine.Interfaces` | `Carubbi.LayoutTemplateEngine.Interfaces` | Shared `ILayoutTemplateEngine` abstraction |
-| `Carubbi.LayoutTemplateEngine` | `Carubbi.LayoutTemplateEngine` | Razor via [RazorEngineCore](https://github.com/adoconnection/RazorEngineCore) |
+| `Carubbi.LayoutTemplateEngine.Razor` | `Carubbi.LayoutTemplateEngine.Razor` | Razor via [RazorEngineCore](https://github.com/adoconnection/RazorEngineCore) (master-page aware) |
 | `Carubbi.LayoutTemplateEngine.NVelocity` | `Carubbi.LayoutTemplateEngine.NVelocity` | [NVelocity](http://www.castleproject.org/) |
-| `Carubbi.LayoutTemplateEngine.Razor3` | `Carubbi.LayoutTemplateEngine.Razor3` | Razor via RazorEngineCore (master-page aware) |
 
 Target framework: `net10.0`. Requires .NET 10 SDK.
 
@@ -31,7 +30,7 @@ public interface ILayoutTemplateEngine
 ### Razor
 
 ```csharp
-var engine = new Carubbi.LayoutTemplateEngine.RazorEngine();
+var engine = new Carubbi.LayoutTemplateEngine.Razor.RazorEngine();
 var data = new Dictionary<string, object> { ["Name"] = "World" };
 
 var result = engine.RenderFromContentTemplate("Hello @Model[\"Name\"]!", data);
@@ -46,10 +45,6 @@ Master-page rendering embeds the child template output as `@Model["TemplateBody"
 var html = engine.RenderTemplate("C:\\templates\\layout.cshtml", "C:\\templates\\content.cshtml", data);
 // layout.cshtml: <html><body>@Model["TemplateBody"]</body></html>
 ```
-
-### Razor3
-
-Same API as the Razor engine, in its own package (`Carubbi.LayoutTemplateEngine.Razor3.Razor3Engine`).
 
 ### NVelocity
 
@@ -73,9 +68,8 @@ var html = engine.RenderTemplate("master.vm", "content.vm", data);
 ## NuGet
 
 ```bash
-dotnet add package Carubbi.LayoutTemplateEngine
+dotnet add package Carubbi.LayoutTemplateEngine.Razor
 dotnet add package Carubbi.LayoutTemplateEngine.NVelocity
-dotnet add package Carubbi.LayoutTemplateEngine.Razor3
 dotnet add package Carubbi.LayoutTemplateEngine.Interfaces
 ```
 

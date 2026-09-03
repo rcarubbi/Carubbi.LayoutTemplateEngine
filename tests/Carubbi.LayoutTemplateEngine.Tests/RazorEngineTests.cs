@@ -1,4 +1,4 @@
-using Carubbi.LayoutTemplateEngine;
+using Carubbi.LayoutTemplateEngine.Razor;
 
 namespace Carubbi.LayoutTemplateEngine.Tests;
 

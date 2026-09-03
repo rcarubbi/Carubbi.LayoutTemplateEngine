@@ -2,15 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
-    <RootNamespace>Carubbi.LayoutTemplateEngine.Razor3</RootNamespace>
-    <AssemblyName>Carubbi.LayoutTemplateEngine.Razor3</AssemblyName>
+    <RootNamespace>Carubbi.LayoutTemplateEngine.Razor</RootNamespace>
+    <AssemblyName>Carubbi.LayoutTemplateEngine.Razor</AssemblyName>
   </PropertyGroup>
 
   <PropertyGroup>
-    <PackageId>Carubbi.LayoutTemplateEngine.Razor3</PackageId>
-    <Version>2.0.0</Version>
+    <PackageId>Carubbi.LayoutTemplateEngine.Razor</PackageId>
+    <Version>2.1.0</Version>
     <Authors>Raphael Carubbi Neto</Authors>
-    <Description>Razor (RazorEngineCore) layout template engine wrapper, master-page aware</Description>
+    <Description>Razor (RazorEngineCore) layout template engine wrapper</Description>
     <PackageTags>Layout Engine Wrapper Razor Template</PackageTags>
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
